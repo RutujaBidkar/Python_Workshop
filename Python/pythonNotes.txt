@@ -1,0 +1,45 @@
+What is  difference between a list and a tuple?
+Lists are mutable- you can change them after creation. 
+Tuple are immutable - Once Created that's it. tuples are slightly faster and are used when the data shouldn't change 
+
+What does "args" And 'kwargs' do ?
+"args" collects extra positional arguments into a tuple.
+"Kwargs" collects extra keyworrds arguments into a dict. 
+you use them when you dont know in advance how many arguments a function will receive.
+
+def show(*args, **kwargs):
+  print(args) #tuple
+  print(kwargs) #dict
+show(1,2, name ='Alice') 
+
+what is the difference between == and is ?
+== checks if two values are equal.
+is checks if they are the same object in memory. Two variables can be == without being is. Small Integers (-5 to 256) and short strings are created so is might return 
+True - But never rely on that.
+
+What are mutable and immutable types in python ?
+Mutable = list, dict, set, bytearray
+Immutable = int,float,str,tuple, bool , frozenset.
+Immutable objects can be used as dict keys. 
+Mutable objects passed to a function can be modified inside it - that surprises people.
+
+what is a list comprehension and when do you use it ?
+A compact way to build a list: [expr for item in iterable if condition]. use it when the logic is simple enough to read in one line. where there's exception handling
+or 3+ conditions, use a regular loop 
+
+what is difference between append() and extend() ?
+append() adds one item to the end.
+extend() adds every items from an iterable.
+lst.append([1,2]) makes the list one longer. lst.extend([1,2]) makes it two longer
+
+How does python handle memory managment?
+python uses reference counting plus a garbage collector for cyclic references.
+when an object's reference count drops to zero's it's freed. The gc module handles circular references the reference counter can't detect.
+
+what is lambda function?
+An anonymous function written in one line: lambda args: expression. The expression is always returned - no return needed. best inside sorted(key =...),
+map(0,filter(). never assign a lambda to a variable - use def for that.
+
+What is diffference between deepcopy and copy ?
+copy.copy() is a shallow copy - it copies the outer object but nested objects are still shared. copy.deepcopy() copies everything recursively . for a list of lists,
+shallow copy means modifying a nested list affect both copies.
