@@ -1,6 +1,6 @@
 # Input two variable
-a = Input("Enter the value of the first variable (a) :")
-b = Input("Enter the value of the second variable (b) :")
+a = input("Enter the value of the first variable (a) :")
+b = input("Enter the value of the second variable (b) :")
 
 #Display the original Value
 print(f"Original Values : a = {a}, b = {b}")
